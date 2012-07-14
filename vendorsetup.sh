@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2011 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,4 @@
 # limitations under the License.
 #
 
-# Include p31xx BoardConfigCommon
--include device/samsung/p3100/BoardConfigCommon.mk
-
-TARGET_BOARD_INFO_FILE := device/samsung/p3113/board-info.txt
-
-# Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/samsung/espresso10
-TARGET_KERNEL_CONFIG := aokp_p3113_defconfig
-
-# assert
-TARGET_OTA_ASSERT_DEVICE := p3113,GT-P3113,espressowifi,espressowifixx
+#add_lunch_combo full_p3113-userdebug
