@@ -18,10 +18,17 @@ $(call inherit-product, device/samsung/p3100/p31xx-common.mk)
 
 LOCAL_PATH := device/samsung/p3113
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/samsung/p3113/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Audio
+# Audio and prebuilt kernel
 PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel \
 	$(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/espressowifi \
 	$(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
 
